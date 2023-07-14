@@ -3,9 +3,9 @@ pipeline{
     stages{
         stage("build stage"){
             steps{
-                // nodejs(nodeJSInstallationName: 'v12.22.9') {
+                nodejs(nodeJSInstallationName: 'v12.22.9') {
                     sh "npm install"
-                
+                }
             }
         }
     }
