@@ -11,6 +11,7 @@ pipeline{
         stage("sonar scanner"){
             steps{
                 nodejs(nodeJSInstallationName: 'Nodejs 20.4.0') { 
+                   sh"su -jenkins"
                    sh "npm run sonar"
                 }
             }
