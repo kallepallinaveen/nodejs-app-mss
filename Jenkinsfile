@@ -10,8 +10,8 @@ pipeline{
         }
         stage("sonar scanner"){
             steps{
-                nodejs(nodeJSInstallationName: 'Nodejs 20.4.0') {
-                    sh "npm run sonar"
+                nodejs(nodeJSInstallationName: 'Nodejs 20.4.0') { 
+                   sh "npm run sonar"
                 }
             }
         }
