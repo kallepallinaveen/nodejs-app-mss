@@ -1,19 +1,15 @@
-const sonarqubeScanner = require('sonarqube-scanner');
+sonar.projectKey= This_is_a_Node_JS_application
+sonar.projectName= Node_JS_Application_Sample
+sonar.projectVersion=1.0
+sonar.login=ssqa_66697c98cba617b4bc7c19ffe654db0b93df0702
+sonar.sources=src
+sonar.sourceEncoding=UTF-8
 
-sonarqubeScanner({
-  serverUrl: 'http://172.18.102.114:9000',
-       options : {
-	    'sonar.projectDescription': 'This is a Node JS application',
-	    'sonar.projectName': 'Node JS Application - Sample',
-	    'sonar.projectKey':'nodejs',
-	    'sonar.login': 'ssqa_66697c98cba617b4bc7c19ffe654db0b93df0702',
-	    //'sonar.login': 'admin',
-	    //'sonar.password': 'admin123',
-            'sonar.projectVersion':'1.0',
-	    'sonar.language':'js',
-            'sonar.sourceEncoding':'UTF-8',
-            'sonar.sources': '.',
-	  //'sonar.tests': 'specs',
-          //'sonar.inclusions' : 'src/**'
-       },
-} );
+//sonar.tests=test
+sonar.language=js
+//sonar.profile=node
+
+//sonar.dynamicAnalysis=reuseReports
+
+//sonar.javascript.jstest.reportsPath=reports
+//sonar.javascript.lcov.reportPath=reports/coverage.lcov
