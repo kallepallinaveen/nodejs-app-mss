@@ -3,14 +3,14 @@ pipeline{
     stages{
         stage("build"){
             steps{
-                nodejs(nodeJSInstallationName: 'Nodejs 20.4.0') {
+                nodejs(nodeJSInstallationName: 'nodejs18.6.0') {
                     sh "npm install"
                 }
             }
         }
         stage("sonar scanner"){
             steps{
-                nodejs(nodeJSInstallationName: 'Nodejs 20.4.0') { 
+                nodejs(nodeJSInstallationName: 'nodejs18.6.0') { 
                     withSonarQubeEnv('sonar'){
                         sh "npm install sonar-scanner"
                         sh "npm run sonar"
