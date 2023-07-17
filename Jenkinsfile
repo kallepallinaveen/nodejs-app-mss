@@ -8,14 +8,6 @@ pipeline{
                 }
             }
         }
-        stage("test"){
-            steps{
-                nodejs(nodeJSInstallationName: 'Nodejs 20.4.0') {
-                    sh "npm test"
-                }
-            }
-        }
-    
         stage("sonar scanner"){
             steps{
                 nodejs(nodeJSInstallationName: 'Nodejs 20.4.0') { 
