@@ -1,13 +1,21 @@
 pipeline{
     agent any
     stages{
-        stage("build stage"){
+        stage("build"){
             steps{
                 nodejs(nodeJSInstallationName: 'Nodejs 20.4.0') {
                     sh "npm install"
                 }
             }
         }
+        stage("test"){
+            steps{
+                nodejs(nodeJSInstallationName: 'Nodejs 20.4.0') {
+                    sh "npm test"
+                }
+            }
+        }
+    
         stage("sonar scanner"){
             steps{
                 nodejs(nodeJSInstallationName: 'Nodejs 20.4.0') { 
