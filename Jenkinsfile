@@ -18,6 +18,13 @@ pipeline{
                 }
             }
         }
+        stage("artifacts"){
+            steps{
+                nodejs(nodeJSInstallationName: 'nodejs18.6.0') {
+                    sh "npm publish"
+                }
+            }
+        }
     }
 }
 
