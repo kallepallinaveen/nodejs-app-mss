@@ -13,7 +13,7 @@ pipeline{
                 nodejs(nodeJSInstallationName: 'nodejs15.3.0') { 
                     withSonarQubeEnv('sonar'){
                         sh "npm install sonar-scanner"
-                        sh "${scannerHome}/bin/sonar-scanner:npm run sonar"
+                        sh "npm run sonar"
                     }
                 }
             }
