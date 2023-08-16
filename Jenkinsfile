@@ -3,14 +3,14 @@ pipeline{
     stages{
         stage("build"){
             steps{
-                nodejs(nodeJSInstallationName: 'nodejs15.3.0') {
+                nodejs(nodeJSInstallationName: 'nodejs12.22.9') {
                     sh "npm install"
                 }
             }
         }
         stage("sonar scanner"){
             steps{
-                nodejs(nodeJSInstallationName: 'nodejs15.3.0') { 
+                nodejs(nodeJSInstallationName: 'nodejs12.22.9') { 
                     withSonarQubeEnv('sonar'){
                         sh "npm install sonar-scanner"
                         sh "npm run sonar"
@@ -20,7 +20,7 @@ pipeline{
         }
         stage("runNodejs "){
             steps{
-                nodejs(nodeJSInstallationName: 'nodejs15.3.0') {
+                nodejs(nodeJSInstallationName: 'nodejs12.22.9') {
                     sh "npm start &"
                 }
             }
